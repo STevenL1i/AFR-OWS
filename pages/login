@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="AFR_Website/pages/login.css">
+    </head>
+
+    <body>
+        <h1 class="title">AFR联赛报名系统</h1>
+  
+    <img class="africon" src="AFR_Website/item/africon.jpg"/>
+    
+    <div class="acctdiv">
+        <label class="acctlabel">账号：     </label>
+        <input class="acctinput" type="text" placeholder="输入你的LAN账号">
+    </div>
+    <div class="pwddiv">
+        <label class="pwdlabel">密码：     </label>
+        <input class="pwdinput" type="password" placeholder="密码">
+    </div>
+    
+    <div class="logindiv">
+        <button class="loginbutton">
+            登录
+        </button>
+    </div>
+
+    <label class="t">eagestgbstt</label>
+
+        </view>
+    </body>
+</html>

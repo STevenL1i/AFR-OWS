@@ -1,0 +1,47 @@
+.title {
+    color: #FF00FF;
+    font-size: 60;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.africon {
+    width: 128px;
+    height: 128px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+.acctdiv {
+    text-align: center;
+}
+.pwddiv {
+    text-align: center;
+}
+
+.acctinput {
+    width: 200px;
+    height: 30px;
+    margin-top: 25px;
+}
+.pwdinput {
+    width: 200px;
+    height: 30px;
+    margin-top: 25px;
+}
+
+.logindiv {
+    text-align: center;
+}
+.loginbutton {
+    width: 100px;
+    height: 30px;
+    margin-top: 40px;
+}
+
+.t {
+    float: right;
+    margin-top: -100px;
+}
