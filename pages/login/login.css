@@ -1,11 +1,11 @@
-.title {
+#title {
     color: #FF00FF;
     font-size: 60;
     text-align: center;
     margin-top: 30px;
 }
 
-.africon {
+#africon {
     width: 128px;
     height: 128px;
     display: block;
@@ -14,34 +14,29 @@
     margin-top: 0px;
 }
 
-.acctdiv {
+#acctdiv {
     text-align: center;
 }
-.pwddiv {
+#pwddiv {
     text-align: center;
 }
 
-.acctinput {
+#acctinput {
     width: 200px;
     height: 30px;
     margin-top: 25px;
 }
-.pwdinput {
+#pwdinput {
     width: 200px;
     height: 30px;
     margin-top: 25px;
 }
 
-.logindiv {
+#logindiv {
     text-align: center;
 }
-.loginbutton {
+#loginbutton {
     width: 100px;
     height: 30px;
     margin-top: 40px;
-}
-
-.t {
-    float: right;
-    margin-top: -100px;
 }
