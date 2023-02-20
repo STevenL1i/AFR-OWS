@@ -1,7 +1,0 @@
-from flask import *
-import json
-
-app = Flask("__name__")
-
-if __name__ == "__main__":
-    app.run(port=9000)
