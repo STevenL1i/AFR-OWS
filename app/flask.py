@@ -3,6 +3,7 @@ from flask import *
 from gevent import pywsgi
 
 import authenticator as auth
+import dbapp as dbapp
 
 app = Flask("__name__")
 
@@ -21,6 +22,15 @@ def login():
     result = auth.checkpassword(logincred["id"], logincred["password"])
 
     return jsonify(result)
+
+@app.route("/getprof")
+def getProfile():
+    driverprof = request.get_data()
+    driverprof = json.loads(driverprof)
+
+    result = dbapp.getProfile(driverprof["id"])
+
+    return result
 
 
 

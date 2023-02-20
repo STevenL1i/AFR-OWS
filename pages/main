@@ -3,8 +3,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="src/main.css">
         <script src="src/main.js"></script>
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-
+        <!--script src="https://code.jquery.com/jquery-3.6.3.min.js"></script-->
     </head>
 
     <body>
@@ -12,7 +11,7 @@
         <h1 id="welc_title">AFR联赛报名系统</h1>
         <img id="africon" src="../item/africon.jpg"/>
         <div id="driveridLabel">
-            <h2 id="driver_id">登录ID： <span id="drivername"></span></h2>
+            <h3 id="driver_id">登录ID： <span id="drivername"></span></h3>
                 <script>
                     let id = sessionStorage.getItem("id");
                     document.getElementById("drivername").innerHTML = id;
@@ -20,7 +19,7 @@
         </div>
 
         <ul id="navigator">
-            <li><a href="">个人资料</a></li>
+            <li><a href="profile" onclick="showprofile();">个人资料</a></li>
             <li><a href="">比赛报名</a></li>
         </ul>
 

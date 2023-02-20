@@ -1,4 +1,4 @@
-import authenticator
+import authenticator as auth
 
 id = "afr_public"
 pwd = "afr_public"
@@ -14,7 +14,7 @@ for c in id:
 usr = "STevenL2i"
 pwd = "ABC1120abc"
 
-authhash = authenticator.getHashString(usr, pwd)
+authhash = auth.getHashString(usr, pwd)
 
 conf = open("/usr/local/vpnserver/vpn_server.config", "r", encoding="utf-8")
 conf = conf.readlines()

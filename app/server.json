@@ -1,3 +1,7 @@
 {
-    
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "StevenLi",
+    "password": "ABC@1120ab",
+    "db": "afr_s11"
 }

@@ -83,5 +83,6 @@ def getHashString(username:str, password:str):
     f = open("sha0string.txt", "r", encoding="utf-8")
     hashstring = f.read()
     f.close()
+    os.system("rm -rf sha0string.txt")
 
     return hashstring

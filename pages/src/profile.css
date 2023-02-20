@@ -13,20 +13,3 @@
     margin-right: auto;
     margin-top: 0px;
 }
-
-#driveridLabel {
-    text-align: center;
-    margin-right: 0px;
-}
-
-#navigator {
-    list-style: none;
-    text-align: center;
-    margin-right: 200px;
-    margin-top: 10px;
-}
-
-#navigator li {
-    margin-top: 20px;
-}
-
