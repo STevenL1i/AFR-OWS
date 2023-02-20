@@ -13,3 +13,24 @@
     margin-right: auto;
     margin-top: 0px;
 }
+
+#profiletable {
+    font-family: Arial;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+#profiletable tr {
+    height: 40px;
+    width: 100px;
+
+}
+#profiletable td {
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+span {
+    font-family: Arial;
+}
