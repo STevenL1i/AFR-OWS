@@ -1,0 +1,32 @@
+#welc_title {
+    color: #FF00FF;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+#africon {
+    width: 128px;
+    height: 128px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+#driveridLabel {
+    text-align: center;
+    margin-right: 200px;
+}
+
+#navigator {
+    list-style: none;
+    text-align: center;
+    margin-right: 200px;
+    margin-top: 10px;
+}
+
+#navigator li {
+    margin-top: 20px;
+}
+
