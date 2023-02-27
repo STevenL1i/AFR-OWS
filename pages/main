@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="src/main.css">
-        <script src="src/main.js"></script>
+        <!--script src="src/main.js"></script-->
         <!--script src="https://code.jquery.com/jquery-3.6.3.min.js"></script-->
     </head>
 
@@ -19,8 +19,8 @@
         </div>
 
         <ul id="navigator">
-            <li><a href="profile" onclick="showprofile();">个人资料</a></li>
-            <li><a href="">比赛报名</a></li>
+            <li><a href="profile">个人资料</a></li>
+            <li><a href="regist">比赛报名</a></li>
         </ul>
 
 

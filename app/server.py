@@ -1,6 +1,6 @@
 import json
+import datetime
 from flask import *
-from gevent import pywsgi
 
 import authenticator as auth
 import dbapp as dbapp
@@ -14,6 +14,7 @@ def cors(environ):
     environ.headers["Access-Control-Allow-Headers"] = "Origin, X-Requested-With, Content-Type, Accept"
     return environ
 
+
 @app.route("/login", methods=["POST"])
 def login():
     logincred = request.get_data()
@@ -23,7 +24,8 @@ def login():
 
     return jsonify(result)
 
-@app.route("/getprof")
+
+@app.route("/getprof", methods=["POST"])
 def getProfile():
     driverprof = request.get_data()
     driverprof = json.loads(driverprof)
@@ -31,6 +33,47 @@ def getProfile():
     result = dbapp.getProfile(driverprof["id"])
 
     return result
+
+
+@app.route("/getrace", methods=["POST"])
+def getrace():
+    today = datetime.datetime.today()
+    today_str = today.strftime("%Y-%m-%d")
+
+    result = dbapp.getRaceByStatus(status="ON GOING")
+    return result
+
+
+@app.route("/getregist", methods=["POST"])
+def getregist():
+    gp = request.get_data()
+    gp = json.loads(gp)
+
+    result = dbapp.getRegist(gp["round"], gp["GP"])
+
+    return result
+
+
+@app.route("/driverregist", methods=["POST"])
+def driverregist():
+    driverreg = request.get_data()
+    driverreg = json.loads(driverreg)
+
+    result = dbapp.driverRegist(driverreg["id"], driverreg["gp"], driverreg["racegroup"])
+
+    return result
+
+
+@app.route("/driverwithdraw", methods=["POST"])
+def driverwithdraw():
+    driverwd = request.get_data()
+    driverwd = json.loads(driverwd)
+
+    result = dbapp.driverWithdraw(driverwd["id"], driverwd["gp"], driverwd["racegroup"])
+
+    return result
+
+
 
 
 

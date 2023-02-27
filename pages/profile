@@ -2,42 +2,51 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="src/profile.css">
+        <script src="src/profile.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     </head>
 
-    <body>
+
+    <body onload="showprofile()">
         <h1 id="welc_title">AFR联赛报名系统</h1>
         <img id="africon" src="../item/africon.jpg"/>
+
+        <div id="refersh_label">
+            <label id="refershinfo">若页面有延迟，点击此手动刷新，此bug仍在修复中</label><br>
+            <button id="refershbutton" onclick="refersh();">刷新</button>
+        </div>
 
         <table id="profiletable">
             <tr>
                 <td><b>车手ID： </b></td>
-                <td><span id="driverid">ST</span></td>
+                <td><span id="driverid"></span></td>
             </tr>
             <tr>
                 <td><b>组别：</b></td>
-                <td><span id="drivergroup">A2</span></td>
+                <td><span id="drivergroup"></span></td>
             </tr>
             <tr>
                 <td><b>车队：</b></td>
-                <td><span id="team">Reserve</span></td>
+                <td><span id="team"></span></td>
             </tr>
             <tr>
                 <td><b>状态：</b></td>
-                <td><span id="driverstatus">reserved driver</span></td>
+                <td><span id="driverstatus"></span></td>
             </tr>
             <tr>
                 <td><b>加入日期：</b></td>
-                <td><span id="joindate">2023-02-23</span></td>
+                <td><span id="joindate"></span></td>
             </tr>
             <tr>
                 <td><b>参赛场次：</b></td>
-                <td><span id="attendance">1</span></td>
+                <td><span id="attendance"></span></td>
             </tr>
             <tr>
                 <td><b>驾照分：</b></td>
-                <td><span id="licensepoint">12</span></td>
+                <td><span id="licensepoint"></span></td>
             </tr>
         </table>
+        
+        
     </body>
 </html>

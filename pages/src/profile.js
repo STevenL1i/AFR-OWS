@@ -13,7 +13,11 @@ function showprofile()
         success: function(data)
         {
             console.log(data);
-            
+            document.getElementById("driverid").innerHTML = id;
+            document.getElementById("drivergroup").innerHTML = data["group"];
+            document.getElementById("team").innerHTML = data["team"];
+            document.getElementById("driverstatus").innerHTML = data["status"];
+            document.getElementById("joindate").innerHTML = data["joindate"];
         },
         error: function()
         {
@@ -21,4 +25,9 @@ function showprofile()
             console.trace();
         }
     });
+}
+
+function refersh()
+{
+    window.location.reload();
 }

@@ -14,6 +14,14 @@
     margin-top: 0px;
 }
 
+#refersh_label {
+    text-align: center;
+    margin-top: 20px;
+}
+#refershbutton {
+    margin-top: 20px;
+}
+
 #profiletable {
     font-family: Arial;
 
