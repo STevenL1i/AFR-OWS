@@ -27,9 +27,9 @@
         <label>选择组别：</label>
         <select name="racegroup" id="racegroup">
             <option value=""></option>
-            <option value="A1">A1</option>
-            <option value="A2">A2</option>
-            <option value="A3">A3</option>
+            <option value="A1">冠军组（Champions League）</option-->
+            <option value="A2">挑战者组（Challenger League）</option>
+            <option value="A3">新手组（Amateur League）</option>
         </select>
         <button id="registbutton" onclick="driverRegist();">报名比赛</button>
         <button id="withdrawbutton" onclick="driverWithdraw();">取消报名</button>

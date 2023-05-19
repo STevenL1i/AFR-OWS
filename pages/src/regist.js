@@ -49,6 +49,12 @@ function getRegistration()
                 drivercell.innerHTML = a1reg[i][0];
                 regtimecell.innerHTML = a1reg[i][5];
             }
+            var row = a1table.insertRow(-1);
+            var drivercounttag = row.insertCell(0);
+            var drivercountcell = row.insertCell(1);
+            drivercounttag.innerHTML = "";
+            drivercountcell.innerHTML = a1reg.length + "人";
+
 
             var a2table = document.getElementById("A2regtable");
             var a2reg = data["A2"];
@@ -60,6 +66,12 @@ function getRegistration()
                 drivercell.innerHTML = a2reg[i][0];
                 regtimecell.innerHTML = a2reg[i][5];
             }
+            var row = a2table.insertRow(-1);
+            var drivercounttag = row.insertCell(0);
+            var drivercountcell = row.insertCell(1);
+            drivercounttag.innerHTML = "";
+            drivercountcell.innerHTML = a2reg.length + "人";
+
 
             var a3table = document.getElementById("A3regtable");
             var a3reg = data["A3"];
@@ -71,6 +83,12 @@ function getRegistration()
                 drivercell.innerHTML = a3reg[i][0];
                 regtimecell.innerHTML = a3reg[i][5];
             }
+            var row = a3table.insertRow(-1);
+            var drivercounttag = row.insertCell(0);
+            var drivercountcell = row.insertCell(1);
+            drivercounttag.innerHTML = "";
+            drivercountcell.innerHTML = a3reg.length + "人";
+
         },
         error: function()
         {
