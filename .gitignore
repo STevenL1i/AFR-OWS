@@ -1,3 +1,4 @@
 app/sha0string.txt
 app/nohup.out
 server.json
+*.pyc
