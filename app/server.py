@@ -40,7 +40,7 @@ def getrace():
     today = datetime.datetime.today()
     today_str = today.strftime("%Y-%m-%d")
 
-    result = dbapp.getRaceByStatus(status="ON GOING")
+    result = dbapp.getRaceByStatus(status="ON REGIST")
     return result
 
 

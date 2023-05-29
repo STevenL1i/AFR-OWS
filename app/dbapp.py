@@ -169,6 +169,11 @@ def driverRegist(id:str, gp:str, racegroup:str):
     if driverprof["status"] == "not attended for current season":
         regresult["result"] = "您目前没有报名参加本赛季，请先从群公告内的报名链接报名本赛季"
         return regresult
+
+    # check driver whether retired/ban for this season
+    if driverprof["team"] == "Retired":
+        regresult["result"] = "您目前已经退出本赛季（或被赛季禁赛），无法再参加本赛季后续的比赛"
+        return regresult
     
     # check driver is allow to attend race in this group
     if regresult["racegroup"] not in raceCert[driverprof["group"]]:
