@@ -289,6 +289,20 @@ def songorder(id:str, songname:str, artist:str, album:str, link:str):
     today_str = today.strftime("%Y-%m-%d %H:%M")
 
     try:
+        query = "SELECT value FROM afr_db.League_Info \
+                WHERE field = 'radiolimits';"
+        cursor.execute(query)
+        result = cursor.fetchall()
+        songlimit = int(result[0][0])
+
+        query = f'SELECT * FROM afr_db.radio \
+                WHERE driverName = "{id}";'
+        cursor.execute(query)
+        result = cursor.fetchall()
+        if len(result) >= songlimit:
+            orderresult["result"] = f'目前点歌数量已达{songlimit}首上限，等待你的歌曲被播放后再进行点歌'
+            return orderresult
+
         query = "INSERT INTO afr_db.radio VALUES (%s, %s, %s, %s, %s, %s, %s, %s);"
         val = (id, songname, artist, album, link, today_str, None, 0)
         cursor.execute(query, val)
