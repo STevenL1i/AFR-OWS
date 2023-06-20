@@ -250,7 +250,10 @@ def getRadioList():
 
     for i in range(len(result)):
         result[i] = list(result[i])
-        result[i][6] = result[i][6].strftime("%Y-%m-%d %H:%M:%S")
+        try:
+            result[i][6] = result[i][6].strftime("%Y-%m-%d %H:%M:%S")
+        except AttributeError:
+            pass
 
     return {"songlist": result}
 
