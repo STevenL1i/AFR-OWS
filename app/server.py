@@ -74,7 +74,19 @@ def driverwithdraw():
     return result
 
 
+@app.route("/getradiolist", methods=["POST"])
+def getradiolist():
+    return dbapp.getRadioList()
 
+
+@app.route("/songorder", methods=["POST"])
+def songorder():
+    sorder = request.get_data()
+    sorder = json.loads(sorder)
+
+    result = dbapp.songorder(sorder["id"], sorder["songname"], sorder["artist"], sorder["album"], sorder["link"])
+
+    return result    
 
 
 app.run(host='0.0.0.0', port=9000)

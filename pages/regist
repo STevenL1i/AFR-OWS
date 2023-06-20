@@ -7,7 +7,7 @@
     </head>
 
     <body onload="initializepage(); getRegistration();">
-    <h1 id="welc_title">AFR联赛报名系统</h1>
+    <h1 id="welc_title">AFR赛事车手中心</h1>
     <img id="africon" src="../item/africon.jpg"/>
 
     <div id="driveridLabel">

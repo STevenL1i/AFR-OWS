@@ -1,5 +1,5 @@
 import os
-import time
+import time, datetime
 
 
 
@@ -15,6 +15,11 @@ def checkpassword(id:str, password:str):
 
     result = {"username": username, "password": password}
 
+    os.system('printf "\n\n"')
+    os.system(f'echo "User login:"')
+    os.system(f'echo "Time: {datetime.datetime.today().strftime("%Y-%m-%d %H:%M:%S")}"')
+    os.system(f'echo "ID: {id}"')
+    os.system(f'echo -n "AuthHash: "')
     authhash = getHashString(username, password)
 
     if authhash == "server time out":
@@ -62,6 +67,7 @@ def checkpassword(id:str, password:str):
     else:
         result["validation"] = "username/password validation error"
     
+    os.system(f'echo {result["validation"]}')
     return result
 
 

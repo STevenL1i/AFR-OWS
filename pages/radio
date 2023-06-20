@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="src/radio.css">
+        <script src="src/radio.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    </head>
+
+    <body onload="getRadioList();">
+        <h1 id="welc_title">AFR赛事车手中心</h1>
+        <img id="africon" src="../item/africon.jpg"/>
+        <div id="driveridLabel">
+            <h3 id="driver_id">登录ID： <span id="drivername"></span></h3>
+                <script>
+                    let id = sessionStorage.getItem("id");
+                    document.getElementById("drivername").innerHTML = id;
+                </script>
+        </div>
+        <div id="refersh_label">
+            <label id="refershinfo">若页面有延迟，点击此手动刷新，此bug仍在修复中</label><br>
+            <button id="refershbutton" onclick="refersh();">刷新</button>
+        </div>
+
+        <div id="songnamediv">
+            <label id="songnamelabel">歌曲名：     </label>
+            <input id="songnameinput" type="text" placeholder="输入歌曲名">
+        </div>
+        <div id="artistdiv">
+            <label id="artistlabel">歌手名：        </label>
+            <input id="artistinput" type="text" placeholder="输入歌手名">
+        </div>
+        <div id="albumdiv">
+            <label id="albumlabel">专辑名：        </label>
+            <input id="albuminput" type="text" placeholder="输入专辑名">
+        </div>
+        <div id="linkdiv">
+            <label id="linklabel">歌曲链接：        </label>
+            <input id="linkinput" type="text" placeholder="输入歌曲链接">
+        </div>
+
+        <div id="submitdiv">
+            <button id="submitbutton" onclick="songorder();">
+                提交
+            </button>
+        </div>
+        
+        <div id="radiolistdiv">
+            <h3>歌单池：<span id="radiolistlabel"></span></h3>
+            <table id="radiolisttable">
+                <tr>
+                    <th>点播车手</th>
+                    <th>歌名</th>
+                    <th>歌手名</th>
+                    <th>已播次数</th>
+                    <th>上次播放</th>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>

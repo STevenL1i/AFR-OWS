@@ -8,7 +8,7 @@
 
     <body>
     <body>
-        <h1 id="welc_title">AFR联赛报名系统</h1>
+        <h1 id="welc_title">AFR赛事车手中心</h1>
         <img id="africon" src="../item/africon.jpg"/>
         <div id="driveridLabel">
             <h3 id="driver_id">登录ID： <span id="drivername"></span></h3>
@@ -21,6 +21,7 @@
         <ul id="navigator">
             <li><a href="profile">个人资料</a></li>
             <li><a href="regist">比赛报名</a></li>
+            <li><a href="radio">点歌台</a></li>
         </ul>
 
 

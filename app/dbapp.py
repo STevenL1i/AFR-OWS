@@ -19,8 +19,6 @@ def getProfile(id:str):
     query = f'SELECT * FROM driverList WHERE driverName = "{id}";'
     cursor.execute(query)
     result = cursor.fetchall()
-    print(query)
-    print(result)
 
     driverProf = {
             "id": id,
@@ -208,7 +206,6 @@ def driverRegist(id:str, gp:str, racegroup:str):
     
 
 
-
 def driverWithdraw(id:str, gp:str, racegroup:str):
     db = dbconnect.connect_with_conf("server.json", "db")
     cursor = db.cursor()
@@ -238,3 +235,71 @@ def driverWithdraw(id:str, gp:str, racegroup:str):
     regresult["result"] = f'您已取消{regresult["racegroup"]}组别{raceinfo[2]}站的比赛，请刷新页面'
     
     return regresult
+
+
+
+
+def getRadioList():
+    db = dbconnect.connect_with_conf("server.json", "db")
+    cursor = db.cursor()
+
+    query = "SELECT * FROM afr_db.radio \
+            ORDER BY timesplayed ASC, lastplayed ASC, orderdate ASC;"
+    cursor.execute(query)
+    result = cursor.fetchall()
+
+    for i in range(len(result)):
+        result[i] = list(result[i])
+        result[i][6] = result[i][6].strftime("%Y-%m-%d %H:%M:%S")
+
+    return {"songlist": result}
+
+
+
+def songorder(id:str, songname:str, artist:str, album:str, link:str):
+    db = dbconnect.connect_with_conf("server.json", "db")
+    cursor = db.cursor()
+
+    orderresult = {
+        "id": id,
+        "result": "stand by"
+    }
+
+    query = f'SELECT * FROM afr_db.Blacklist \
+            WHERE id = "{id}" AND type = "radio ban";'
+    cursor.execute(query)
+    result = cursor.fetchall()
+    if len(result) > 0:
+        orderresult["result"] = "您已被加入点歌台黑名单\n有问题请与管理员联系"
+        return orderresult
+
+    
+    if songname.replace(" ", "") == "":
+        orderresult["result"] = "歌曲名不能为空"
+        return orderresult
+    
+    if artist.replace(" ", "") == "" and link.replace(" ", "") == "":
+        orderresult["result"] = "必须输入一个歌手名或分享链接"
+        return orderresult
+    
+    today = datetime.datetime.today()
+    today_str = today.strftime("%Y-%m-%d %H:%M")
+
+    try:
+        query = "INSERT INTO afr_db.radio VALUES (%s, %s, %s, %s, %s, %s, %s, %s);"
+        val = (id, songname, artist, album, link, today_str, None, 0)
+        cursor.execute(query, val)
+        db.commit()
+
+        orderresult["result"] = f'歌曲 "{songname}" 点播成功，请刷新页面'
+        return orderresult
+    
+    except mysql.connector.errors.IntegrityError as e:
+        # Duplicate entry 'xxx' for key 'radio.PRIMARY'
+        if str(e).find("Duplicate entry") != -1 and str(e).find("radio.PRIMARY") != -1:
+            orderresult["result"] = "该歌曲已被点播，如果有特殊情况请联系管理员"
+        else:
+            orderresult["result"] = f'出现未知错误：{str(e)}\n请联系管理员寻求帮助'
+        
+        return orderresult
+    
