@@ -296,7 +296,8 @@ def songorder(id:str, songname:str, artist:str, album:str, link:str):
         songlimit = int(result[0][0])
 
         query = f'SELECT * FROM afr_db.radio \
-                WHERE driverName = "{id}";'
+                WHERE driverName = "{id}" \
+                AND timesplayed = (SELECT MIN(timesplayed) FROM afr_db.radio);'
         cursor.execute(query)
         result = cursor.fetchall()
         if len(result) >= songlimit:
