@@ -1,37 +1,34 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="src/main.css">
-        <!--script src="src/main.js"></script-->
-        <!--script src="https://code.jquery.com/jquery-3.6.3.min.js"></script-->
-    </head>
 
-    <body>
-        <h1 id="welc_title">AFR赛事车手中心</h1>
-        <img id="africon" src="../item/africon.jpg"/>
-        <div id="driveridLabel">
-            <h3 id="driver_id">登录ID： <span id="drivername"></span></h3>
-                <script>
-                    let id = sessionStorage.getItem("id");
-                    document.getElementById("drivername").innerHTML = id;
-                </script>
-        </div>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="src/main.css">
+    <!--script src="src/main.js"></script-->
+    <!--script src="https://code.jquery.com/jquery-3.6.3.min.js"></script-->
+</head>
 
-        <ul id="navigator">
-            <li><a href="profile">个人资料</a></li>
-            <li><a href="regist">比赛报名</a></li>
-            <li><a href="radio">点歌台</a></li>
-            <li><a href="reward">打赏赛会</a></li>
-        </ul>
-        
-        <div id="rewardqrcode">
-            <img id="alipayqrcode" src="../item/afr_alipay.jpg"/>
-            <img id="wepayqrcode" src="../item/afr_wepay.jpg"/>
-        </div>
+<body>
+    <h1 id="welc_title">AFR赛事车手中心</h1>
+    <img id="africon" src="../item/africon.jpg" />
+    <div id="driveridLabel">
+        <h3 id="driver_id">登录ID： <span id="drivername"></span></h3>
+        <script>
+            let id = sessionStorage.getItem("id");
+            document.getElementById("drivername").innerHTML = id;
+        </script>
+    </div>
+
+    <ul id="navigator">
+        <li><a href="profile">个人资料</a></li>
+        <li><a href="regist">比赛报名</a></li>
+        <li><a href="radio">点歌台</a></li>
+    </ul>
 
 
-        <!--button onclick="showid()">show my id</button-->
+
+    <!--button onclick="showid()">show my id</button-->
 
 
-    </body>
+</body>
+
 </html>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="AFR_Website/pages/src/login.css">
+        <script src="AFR_Website/pages/src/login.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    </head>
+
+    <body>
+        <h1 id="title">AFR赛事车手中心</h1>
+  
+    <img id="africon" src="AFR_Website/item/africon.jpg"/>
+    
+    <div id="acctdiv">
+        <label id="acctlabel">账号：     </label>
+        <input id="acctinput" type="text" placeholder="输入你的参赛id">
+    </div>
+    <div id="pwddiv">
+        <label id="pwdlabel">密码：     </label>
+        <input id="pwdinput" type="password" placeholder="输入你的LAN密码">
+    </div>
+    
+    <div id="logindiv">
+        <button id="loginbutton" onclick="login()">
+            登录
+        </button>
+    </div>
+
+        </view>
+    </body>
+</html>
