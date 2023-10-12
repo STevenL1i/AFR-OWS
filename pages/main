@@ -22,8 +22,13 @@
         <li><a href="profile">个人资料</a></li>
         <li><a href="regist">比赛报名</a></li>
         <li><a href="radio">点歌台</a></li>
+        <li><a href="reward">打赏赛会</a></li>
     </ul>
 
+    <div id="rewardqrcode">
+        <img id="alipayqrcode" src="../item/afr_alipay.jpg" />
+        <img id="wepayqrcode" src="../item/afr_wepay.jpg" />
+    </div>
 
 
     <!--button onclick="showid()">show my id</button-->

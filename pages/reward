@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="src/reward.css">
+        <!--script src="src/main.js"></script-->
+        <!--script src="https://code.jquery.com/jquery-3.6.3.min.js"></script-->
+    </head>
+
+    <body>
+        <h1 id="welc_title">AFR赛事车手中心</h1>
+        <img id="africon" src="../item/africon.jpg"/>
+        <div id="driveridLabel">
+            <h3 id="driver_id">登录ID： <span id="drivername"></span></h3>
+                <script>
+                    let id = sessionStorage.getItem("id");
+                    document.getElementById("drivername").innerHTML = id;
+                </script>
+        </div>
+
+        <div id="rewardtext">
+        <text>
+            AFR联赛自2019年1月开始S1赛季，直至今日仍在不断发展，作为一个非营利性民间游戏组织，AFR联赛赛会一直免费为各位参赛车手提供了一个规模庞大、制度完整的比赛框架<br/>
+            <br/>
+            即使是随着联赛后期引入各种新技术来改进车手参赛体验，办赛成本一直提升的情况下，赛会仍然以高水准高要求的继续突破提升办赛水平，并且不向任何参赛车手收取任何费用<br/>
+            <br/>
+            如今赛会的发展出现瓶颈，现开通一个打赏通道，各位可以通过下列方式对赛会的工作进行支持以及肯定，所有收到的打赏将会用于联赛服务器的费用、赛季奖品以及其他可以帮助联赛的所有事项（包括但不仅限于，设施，奖品，人力）<br/>
+            <br/>
+            （：仅限目前和曾经参加过联赛的车手打赏，不要将此二维码发送给没有参加过AFR联赛的车手）
+        </text>
+        </div>
+
+
+
+        <div id="rewardqrcode">
+            <img id="alipayqrcode" src="../item/afr_alipay.jpg"/>
+            <img id="wepayqrcode" src="../item/afr_wepay.jpg"/>
+        </div>
+    </body>
+</html>
